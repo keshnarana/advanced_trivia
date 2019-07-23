@@ -1,0 +1,50 @@
+
+.display-4{
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px rgb(0, 167, 0), 0 0 1em rgb(0, 167, 0), 0 0 0.2em rgb(0, 167, 0);
+    color: white;
+    font-size: 60px;
+    text-align: center;
+}
+
+
+
+p{
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+}
+
+img{
+    width: 350px;
+    height: 300px;
+}
+:root {
+    --input-padding-x: 1.5rem;
+    --input-padding-y: .75rem;
+  }
+  body {
+    background: url('https://media0.giphy.com/media/lcMfcZ9Oi2q6UdtxSy/giphy.gif') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+ 
+
+  div.answerchoice:hover,  div.answerchoice:active {font-size: 150%;}
+
+  .form-signin
+  {
+    background-image: linear-gradient(magenta, rgb(19, 158, 19), yellow);
+    color: black;
+    font-size: 30px;
+    text-align: center;
+  }
+ 
+  
+.card-body {
+    padding: 6rem;
+  }
+  
+  
