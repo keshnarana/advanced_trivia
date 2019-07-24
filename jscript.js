@@ -107,7 +107,7 @@ $(document).ready(function () {
                 userChoice.addClass("answerchoice");
                 userChoice.html(pick.choice[i]);
               
-                userChoice.attr("guess", i);
+                userChoice.attr("data-guess", i);
                 $("#answerblock").append(userChoice);
 
     }
@@ -117,7 +117,7 @@ $(document).ready(function () {
   
     $(".answerchoice").on("click", function () {
        
-        userGuess = parseInt($(this).attr("guess"));
+        userGuess = parseInt($(this).attr("data-guess"));
     
     
         if (userGuess === pick.answer) {

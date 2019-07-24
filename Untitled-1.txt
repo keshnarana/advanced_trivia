@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Totally Trivial Trivia</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="jscript.js"></script>
+</head>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+    
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Totally Trivial Trivia</h5>
+            <form class="form-signin">
+            <div class="wrapper">
+              <div class="form-label-group">
+					<div id= "timeleft"></div>
+					<div id= "questionblock"></div>
+					<div id= "answerblock"></div>
+					<button class ="btn btn-lg btn-primary btn-block text-uppercase" id ="start">Start Game</button><br>
+					<button class="btn btn-lg btn-primary btn-block text-uppercase"  id="reset">Play Again?</button>
+              </div>
+           </div>   
+        </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="jscript.js"></script>
+</body>
+</html>
+
+$(document).ready(function() {
+    var scoreCorrect = 0;
+    
+        $('.question').hide();
+        $('.result').hide();
+        $("#restart").hide();
+
+        $('#play').click(function() {
+            $(this).hide();
+            $('#question1').show();
+            run();
+        });
+    
+        $('.b3').click(function() {
+            var input1 = $(this).val();
+            console.log(input1);
+            run();
+            if (input1 == "true") {
+                $('#question1').hide(),
+                $('#correct').show(),
+                $('#question2').show(),
+                scoreCorrect++,
+                console.log(scoreCorrect);
+            } else {
+                $('#question1').hide(),
+                $('#sorry').show(),
+                $('#question2').show();
+                };
+        });
+    
+        $('.b1').click(function() {
+            var input2 = $(this).val();
+            console.log(input2);
+            run();
+            if (input2 === "true") {
+                $('#question2').hide(),
+                $('#sorry').hide(),
+                $('#correct').show(),
+                $('#question3').show(),
+                scoreCorrect++,
+                console.log(scoreCorrect);
+            } else {
+                $('#question2').hide(),
+                $('#correct').hide(),
+                $('#sorry').show(),
+                $('#question3').show();
+                };
+        });
+    
+        $('.b2').click(function() {
+            var input3 = $(this).val();
+            console.log(input3);
+            run();
+            if (input3 == "true")  {
+                $('#question3').hide(),
+                $('#correct').hide(),
+                $('#sorry').hide(),
+                $('#score').show(),
+                $('#question1').hide(),
+                $('#question2').hide(),
+                scoreCorrect++,
+                $("#restart").show();
+                console.log(scoreCorrect),
+                $('#score').html("<p>You answered " + scoreCorrect +" question correctly out of 3.</p>");
+            
+        } else {
+                $('#question3').hide(),
+                $('#correct').hide(),
+                $('#sorry').hide(),
+                $('#question2').hide(),
+                $('#score').show(),
+                $('#question1').hide(),
+                $("#restart").show();
+                console.log(scoreCorrect),
+                $('#score').html("<p>You answered " + scoreCorrect +" question correctly out of 3.</p>");
+                };
+        });
+    
+        $('#restart').click(function() {
+
+            var scoreCorrect = 0;
+    
+            $('.question').hide();
+            $('.result').hide();
+            $('#question1').show();
+        });
+
+      
+        var intervalId;
+        var number = 5;
+        for (let index = 0; index < 4; index++) {
+        
+  function run() {
+
+    number = 5;
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+  }
+
+  function decrement() {
+
+    number--;
+
+    $("#count1").html("<h2>" + number + "</h2>");
+
+
+    if (number === 0) {
+
+    
+      stop();
+
+    }
+  }
+
+  function stop() {
+
+    clearInterval(intervalId);
+
+    }
+  run()
+}
+
+    });

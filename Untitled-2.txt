@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>A-T-G</title>
+  </head>
+  <body>
+      <div class="row">
+          <div class="col-lg">
+            </div>
+      </div>
+    <div class="container">
+        
+        <div class="row">
+           <div class="col-lg">
+      <div class="jumbotron">
+        <h1 class="display-4">Advanced Trivia Game</h1>
+      <hr class="my-4">
+        <p id="time"></p>
+        <button id ="play">play now!</button>
+        
+
+        <section id="correct" class="result">
+            <p>Correct! you may proceed. </p>
+          </section>
+          <section id="correctTwo" class="result">
+            <p>That is correct!</p>
+          </section>
+          <section id="sorry" class="result">
+            <p>Sorry, that is the wrong answer. But you may proceed.</p>
+          </section>
+        
+    
+          <section class= "question" id ="question1">
+            <p class="bg-secondary text-white"> Who is the current president of the United States of America? <br> </p>
+              <div class="btn-group-vertical"> 
+                  <button type="button" class="btn btn-secondary b3" value="false">Jefferson</button>
+                  <button type="button" class="btn btn-secondary b3" value="true">Trump</button>
+                  <button type="button" class="btn btn-secondary b3" value="false">Madison</button>
+                  <button type="button" class="btn btn-secondary b3" value="false">Obama</button>
+              </div>
+              <p id="count1"  class="bg-secondary text-white"></p>
+             </section>
+  
+  
+          <section class= "question" id ="question2">
+            <p class="bg-secondary text-white">8 + 7 is how much<br></p>
+              <div class="btn-group-vertical"> 
+                  <button type="button" class="btn btn-secondary b1" value="true">15</button>
+                  <button type="button" class="btn btn-secondary b1" value="false">17</button>
+                  <button type="button" class="btn btn-secondary b1" value="false">87</button>
+                  <button type="button" class="btn btn-secondary b1" value="false">14</button>
+              </div>
+              <p id="count2"  class="bg-secondary text-white"></p>
+           </section>
+  
+  
+          <section class= "question" id ="question3">
+            <p class="bg-secondary text-white">complete the  following: Big ______ theory<br> </p>
+            <div class="btn-group-vertical"> 
+                <button type="button" class="btn btn-secondary b2" value="false">fat</button>
+                <button type="button" class="btn btn-secondary b2" value="true">bang</button>
+                <button type="button" class="btn btn-secondary b2" value="false">scientific</button>
+                <button type="button" class="btn btn-secondary b2" value="false">red</button>
+            </div>
+            <p id="count3"  class="bg-secondary text-white"></p>
+           </section>
+    
+          <section  id= "score" class="result">
+           
+          </section>
+
+          <button id="restart" class="">Restart</button>
+
+        </div>
+        </div>
+      </div>
+
+
+    
+       
+    </div>
+
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jscript.js"></script>
+    
+  </body>
+</html>
