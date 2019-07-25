@@ -44,8 +44,6 @@ $(document).ready(function () {
     var qCount = options.length;
     var pick;
     var index;
-    var newArray = [];
-    var holder = [];
     const SoundR = new Audio("party_horn-Mike_Koenig-76599891.mp3");
     const SoundW = new Audio("Buzzer-SoundBible.com-188422102.mp3");
     const SoundT = new Audio("Gavel Banging-SoundBible.com-264538562.mp3");
@@ -57,10 +55,9 @@ $(document).ready(function () {
             $("#start").hide();
             displayQuestion();
             runTimer();
-            for(var i = 0; i < options.length; i++) {
-        holder.push(options[i]);
-    }
-        })
+       
+       }
+        )
    
     function runTimer(){
         if (!running) {
@@ -79,6 +76,7 @@ $(document).ready(function () {
             $("#answerblock").html("<p>Time is up! The correct answer is: " + pick.choice[pick.answer] + "</p>");
             TimeUp();
         }	
+
         function TimeUp(){
             SoundT.play();
             $("#answerblock").append("<img src=" + TimeU + ">");
@@ -87,13 +85,12 @@ $(document).ready(function () {
     
     }
 
-
-    
    
     function stop() {
         running = false;
         clearInterval(intervalId);
     }
+
    
     function displayQuestion() {
      
@@ -172,7 +169,7 @@ $(document).ready(function () {
             displayQuestion();
     
         }
-        }, 3*1000);
+        }, 2000);
     
     
     }
@@ -181,9 +178,6 @@ $(document).ready(function () {
         $("#reset").hide();
         $("#answerblock").empty();
         $("#questionblock").empty();
-        for(var i = 0; i < holder.length; i++) {
-            options.push(holder[i]);
-        }
         runTimer();
         displayQuestion();
     
